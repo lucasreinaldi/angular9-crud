@@ -1,0 +1,59 @@
+<ng-template #loading>
+  <mat-spinner mode="indeterminate"></mat-spinner>
+</ng-template>
+
+<div style="flex-direction: row; box-sizing: border-box; display: flex;">
+  <div fxlayout="row" fxlayoutalign="space-between center" class="form-header-container" style="flex-direction: row;box-sizing: border-box;display: flex;place-content: center space-between;align-items: center;flex: 1 1 0%;">
+    <div fxlayoutalign="start center" style="place-content: center flex-start; align-items: center; flex-direction: row; box-sizing: border-box; display: flex; flex: 1 1 0%;">
+      <button mat-icon-button="" class="mat-icon-button mat-button-base" style="height: 50%; width: 56px;">
+        <span class="mat-button-wrapper">
+          <a mat-fab fxLayoutAlign="center start" (click)="close()">
+            <mat-icon>close</mat-icon>
+          </a>
+        </span>
+      </button>
+      <div class="form-header-title">
+        <span>{{ title }}</span>
+      </div>
+    </div>
+    <div class="form-header-options" fxflex="none" fxlayoutalign="end center" style="place-content: center flex-end; align-items: center; flex-direction: row; box-sizing: border-box; display: flex; flex: 0 0 auto;">
+      <button mat-icon-button="" class="mat-icon-button mat-button-base" style="height: 50%; width: 56px;">
+        <span class="mat-button-wrapper">
+          <a mat-fab (click)="save()">
+            <mat-icon>check</mat-icon>
+          </a>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="form-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <div class="box">
+    <form [formGroup]="form" class="example-form">
+      <mat-card-content>
+
+        <mat-form-field class="example-full-width">
+          <input formControlName="name" required matInput placeholder="Nome">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input type="password" formControlName="password" required matInput placeholder="Senha">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input formControlName="email" required matInput placeholder="E-mail">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Escolha uma função</mat-label>
+          <mat-select formControlName="role" [(value)]="role">
+            <mat-option [value]="roles" *ngFor="let roles of roles">{{roles}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </mat-card-content>
+    </form>
+  </div>
+</div>

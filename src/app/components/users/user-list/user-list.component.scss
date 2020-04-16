@@ -1,0 +1,169 @@
+
+table {
+  width: 100%;
+}
+
+.table-wrapper {
+  margin-top: 10vh;
+}
+
+.list-wrapper {
+  width: 100%;
+}
+
+.list-wrapper .example-form {
+	min-width: 100%;
+	max-width: 300px;
+	width: 100%;
+}
+
+.list-wrapper .example-full-width,
+.list-wrapper .btn-block {
+	width: 100%;
+}
+
+.list-wrapper mat-card-header {
+	text-align: center;
+	width: 100%;
+	display: block;
+	font-weight: 700;
+}
+
+.list-wrapper mat-card-header mat-card-title {
+	font-size: 30px;
+	margin: 0;
+}
+
+.list-wrapper .mat-card {
+	padding: 40px 70px 50px;
+}
+
+
+.list-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+	padding: 0.8375em 0;
+}
+
+.header-fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+.list-header .list-header-title {
+  margin-left: 1.5em;
+  font-size: 2em;
+}
+
+
+
+.list-header {
+  height: auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,.15);
+  padding: 2em 0 1em;
+  margin: 0 0 2px;
+}
+
+.list-header-options {
+  padding-right: 4vh;
+}
+
+.list-header-buttons {
+  padding-left: 5vh;
+}
+
+.page-container {
+  min-height: calc(100vh - 106px);
+  background-color: #303030;
+}
+
+::ng-deep .mat-bottom-sheet-container{
+  min-height: 90vh! important;
+}
+
+form {
+  height: calc(100vh - 200px);
+}
+
+.virtual-scroller-item {
+  height: 74px !important;
+}
+
+.users-table {
+  td,
+  th {
+     text-align: left;
+  }
+  tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.sort-header-icon {
+  font-size: 14px !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #999;
+  font-weight: normal;
+}
+
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type,
+th.mat-header-cell:last-of-type {
+  padding-right: 0px !important;
+}
+
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 1;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.gray {
+  color: #999;
+}
+
+table {
+  background-color: #303030;
+}
+
+.mat-paginator {
+  background: #303030;
+}
+
+.column-name {
+  font-size: 14pt;
+}
+
+.column-actions {
+  text-align: center !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .mobile {
+    place-content: stretch flex-end !important;
+  }
+
+  .list-header .list-header-title {
+    margin-left: 1.5em;
+    font-size: 1.5em;
+    word-spacing: .2em;
+  }
+
+  .page-container {
+    max-width: 100% !important;
+    margin-left: 0% !important;
+  }
+}

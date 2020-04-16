@@ -1,0 +1,75 @@
+<div class="page-container mat-elevation" fxFlex="66" fxFlexOffset="15">
+  <div class="header-fixed mat-elevation-z1">
+    <div class="list-header" fxlayout="column">
+      <div fxlayout="row" style="flex-direction: row; box-sizing: border-box; display: flex; margin-bottom: 1em;">
+        <div fxlayout="row" fxlayoutalign="space-between center" style="align-items: center; display: flex; flex: 1 1 0%;">
+          <span class="list-header-title">Usuários</span>
+          <div fxlayout="column" fxlayoutalign="space-between center" class="list-header-buttons">
+            <a class="mobile" mat-fab (click)="add()">
+              <mat-icon matTooltip="Adicionar">add</mat-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="space-around stretch">
+
+    <div *ngIf="users.length === 0" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">
+      <div>
+        <mat-icon style="font-size: 80px; opacity: 0.15; transform: translate(-90%);">sms</mat-icon>
+      </div>
+      <div>Nenhum usuário encontrado.</div>
+    </div>
+
+    <ng-container *ngIf="!isLoading; else loading">
+      <table [hidden]="isLoading || users.length === 0" mat-table [dataSource]="usersDataSource" matSort class="users-table" matSortActive="name" matSortDirection="asc">
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>
+            Nome
+          </mat-header-cell>
+          <mat-cell class="cursor-pointer column-name" mat-cell *matCellDef="let user">
+            <div style="word-wrap: none;">
+              {{ user.name }}
+              <br>
+              <span class="small-text" matLine>{{ user.role }}</span>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>
+            E-mail
+          </mat-header-cell>
+          <mat-cell mat-cell *matCellDef="let user">{{user.email}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell mat-cell class="column-actions mobile" fxLayoutAlign="center" *matCellDef="let user">
+            <button mat-icon-button matTooltip="Remover" style="color: #999;" (click)="delete(user.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <ng-template matMenuContent>
+                <a mat-menu-item><span>Ver Perfil</span></a>
+              </ng-template>
+            </mat-menu>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+        <mat-row mat-row class="virtual-scroller-item cursor-pointer" *matRowDef="let user; columns: columns;" (click)="edit(user.id)" matRipple></mat-row>
+      </table>
+      <mat-paginator *ngIf="users.length > 0" [pageSizeOptions]="[3, 5, 10]" showFirstLastButtons></mat-paginator>
+    </ng-container>
+
+    <ng-template #loading>
+      <div [style.margin-top.em]="2" class="loading-spinner">
+        <mat-spinner mode="indeterminate" color="primary"></mat-spinner>
+      </div>
+    </ng-template>
+
+  </div>
+  <router-outlet></router-outlet>

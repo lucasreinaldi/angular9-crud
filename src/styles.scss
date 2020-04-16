@@ -1,0 +1,123 @@
+@import 'theme.scss';
+
+.page-container {
+   margin: 1em 1em 0em 1em;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: Roboto, 'Helvetica Neue', sans-serif !important;
+}
+
+.fill-space {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.empty-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    font-size: 5em;
+    height: auto;
+    opacity: 0.15;
+    transform: translate(-90%);
+  }
+}
+
+.page-inner-content {
+  padding: 1em 2em !important;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+}
+
+.page-section-title {
+  margin: 1em 0;
+  font-size: 1.25em;
+  display: block;
+}
+
+.page-section-subtitle {
+  display: block;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.625em;
+}
+
+.loading-spinner {
+  min-height: calc(50vh);
+  min-height: calc(100vh - 150);
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  place-content: center;
+  align-items: center;
+}
+
+qex-color-picker {
+  border: #eee solid 1px !important;
+  border-radius: 5px !important;
+}
+
+body {
+  background-color: #272727 !important;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	font-family: 'Roboto', sans-serif;
+}
+
+.mat-app-background {
+  background-color: #272727 !important;
+  color: #fff;
+}
+
+.app-header {
+	justify-content: space-between;
+ 	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+}
+
+.home
+{
+  color: white;
+  text-decoration: none;
+}
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+  padding: 20px;
+}
+
+:host::ng-deep .mat-drawer-content  {
+  min-height: 100vh !important;
+}
+
+:host::ng-deep .mat-drawer-container {
+  background-color: #272727 !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .page-container {
+    margin: 0em 0em 0em 0em;
+  }
+
+}
