@@ -11,7 +11,7 @@ https://lucasreinaldi.github.io/angular9-crud/
 
 ```javascript
 const angular-crud = {
-  tools: ['Angular 9', 'Node', 'Firebase'],
+  tools: ['angular 9', 'node', 'firebase'],
   architecture: ['microservices', 'event-driven', 'rest api'],
     done: '75%'
 }
