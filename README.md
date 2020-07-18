@@ -1,9 +1,3 @@
-# Angular 9 Users CRUD
-
-Projeto realizado para facilitar e validar conhecimentos.
-
-https://lucasreinaldi.github.io/angular9-crud/
-
 <h2>Angular 9 Crud with Firebase</h2>
 <p>build using firebase as backend/database<p>
 
